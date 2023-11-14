@@ -72,11 +72,13 @@ module.exports = {
     flat: true,
   },
   etherscan: {
-    apiKey: apiKeyForEtherscan,
+    apiKey: {
+      mainnet: apiKeyForEtherscan,
+    },
   },
   gasReporter: {
     currency: "USD",
-    gasPrice: 100,
+    gasPrice: 3000000,
     enabled: process.env.REPORT_GAS ? true : false,
   },
   mocha: {
@@ -98,7 +100,7 @@ module.exports = {
       url: `https://speedy-nodes-nyc.moralis.io/${projectId}/polygon/mumbai`,
       accounts: [privateKey],
     },
-    ethermainnet: {
+    mainnet: {
       url: `https://rpc.mevblocker.io`,
       accounts: [privateKey],
     },
